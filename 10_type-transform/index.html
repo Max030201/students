@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Студенты</title>
+  <link rel="stylesheet" href="CSS/normalize.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="CSS/style.css">
+  <script defer type="module" src="JS/main.js"></script>
+</head>
+<body>
+  <section class="main">
+    <div class="container">
+      <h1 class="main-title">Студенты</h1>
+      <div class="nav-add flex">
+        <form class="form" action="" id="add-student">
+          <div class="form-group">
+            <label>
+              Фамилия
+            </label>
+            <input class="form-control input-con" id="input-surename" type="text" placeholder="Фамилия">
+            <div class="error"></div>
+          </div>
+          <div class="form-group">
+            <label>
+              Имя
+            </label>
+            <input class="form-control input-con" id="input-name" type="text" placeholder="Имя">
+            <div class="error"></div>
+          </div>
+          <div class="form-group">
+            <label>
+              Отчество
+            </label>
+            <input class="form-control input-con" id="input-lastname" type="text" placeholder="Отчество">
+            <div class="error"></div>
+          </div>
+          <div class="form-group">
+            <label>
+              Факультет
+            </label>
+            <input class="form-control input-con" id="input-faculty" type="text" placeholder="Факультет">
+            <div class="error"></div>
+          </div>
+          <div class="form-group">
+            <label>
+              Дата рождения
+            </label>
+            <input class="form-control input-con" id="input-dateBirth" type="date" placeholder="Дата рождения">
+            <div class="error"></div>
+          </div>
+          <div class="form-group">
+            <label>
+              Год поступления
+            </label>
+            <input class="form-control input-con" id="input-startTraining" type="number" min="2000" placeholder="Год поступления">
+            <div class="error"></div>
+          </div>
+          <button class="btn btn-success">Добавить</button>
+        </form>
+        <form class="form" id="filter-form" action="">
+          <label>Поиск по таблице</label>
+          <div class="form-group">
+            <label>Поиск по фамилии, имени или отчеству</label>
+            <input class="form-control" id="filter-fio" type="text">
+          </div>
+          <div class="form-group">
+            <label>Посик по факультету</label>
+            <input class="form-control" id="filter-faculty" type="text">
+          </div>
+          <div class="form-group">
+            <label>Поиск по году начала обучения</label>
+            <input class="form-control" id="filter-teachStart" type="number" min="1995">
+          </div>
+          <div class="form-group">
+            <label>Поиск по году окончания обучения</label>
+              <input class="form-control" id="filter-teachFinish" min="1995" type="number">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" id="filterBtn" type="submit">Найти</button>
+          </div>
+        </form>
+      </div>
+      <table class="studentsTable table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <button class="btn-reset"><th data-column="fio" scope="col">ФИО</th></button>
+            <button class="btn-reset"><th data-column="faculty" scope="col">Факультет</th></button>
+            <button class="btn-reset"><th data-column="dateBirth" scope="col">ДР и возраст</th></button>
+            <button class="btn-reset"><th data-column="startTraining" scope="col">Годы обучения</th></button>
+          </tr>
+        </thead>
+        <tbody id="students-list">
+        </tbody>
+      </table>
+    </div>
+  </section>
+</body>
+</html>
